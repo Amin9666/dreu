@@ -4,9 +4,9 @@
 
 ## Goals
 
-- Investigate public spacecraft telemetry anomaly datasets from the research plan.
-- Compare dataset fit for the planned baseline-plus-guarded-agent pipeline.
-- Recommend a primary dataset for initial experiments and identify risks.
+- Investigate candidate public telemetry anomaly datasets.
+- Compare dataset fit for the planned pipeline.
+- Recommend one primary dataset and key risks.
 
 ## Approach and Implementation
 

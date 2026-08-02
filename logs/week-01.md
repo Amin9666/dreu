@@ -4,9 +4,9 @@
 
 ## Goals
 
-- Meet with my advisor to align on the research problem, scope, and deliverables.
-- Translate the initial plan into an executable Week 1 to Week 3 roadmap.
-- Identify the minimum viable system components for the first milestone.
+- Meet with my advisor and confirm project scope.
+- Turn the proposal into a short Week 1 to Week 3 plan.
+- Define the minimum viable first milestone.
 
 ## Approach and Implementation
 
