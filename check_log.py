@@ -12,6 +12,7 @@ Exit code 0 = pass, 1 = validation errors found.
 import re
 import sys
 from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
 # ── Format constants ──────────────────────────────────────────────────────────
 
@@ -30,14 +31,14 @@ PLACEHOLDER_RE = re.compile(r'MM-DD')
 
 # ── Core validator ────────────────────────────────────────────────────────────
 
-def validate_log(content: str, filename: str = "") -> tuple[bool, list[str]]:
+def validate_log(content: str, filename: str = "") -> Tuple[bool, List[str]]:
     """
     Validate the content of a weekly log file.
 
     Returns:
         (passed, errors)  — passed is True only when errors is empty.
     """
-    lines  = content.splitlines()
+    lines = content.splitlines()
     errors = []
 
     # 1. H1 title: must be "# Week N"
@@ -65,9 +66,9 @@ def validate_log(content: str, filename: str = "") -> tuple[bool, list[str]]:
             )
 
     # 3. Parse H2 sections and their content
-    sections: dict[str, list[str]] = {}
-    current: str | None = None
-    body: list[str] = []
+    sections: Dict[str, List[str]] = {}
+    current: Optional[str] = None
+    body: List[str] = []
 
     for line in lines:
         if line.startswith("## "):
@@ -94,7 +95,7 @@ def validate_log(content: str, filename: str = "") -> tuple[bool, list[str]]:
 
 # ── File helper (used by both this script and check_all.py) ──────────────────
 
-def validate_file(filepath: str | Path) -> tuple[bool, list[str]]:
+def validate_file(filepath: str) -> Tuple[bool, List[str]]:
     """Read a file from disk and validate it."""
     path = Path(filepath)
     if not path.exists():
